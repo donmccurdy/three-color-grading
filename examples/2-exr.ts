@@ -72,7 +72,7 @@ pane.registerPlugin(CamerakitPlugin);
 createRenderFolder(pane);
 createToneMappingFolder(pane, toneMappingPass);
 createCDLFolder(pane, prelinCDLPass, { title: 'Pre-transform CDL (Linear)', expanded: false });
-createCDLFolder(pane, toneMappingPass, { title: 'Pre-transform CDL (Log)', expanded: false });
+createCDLFolder(pane, toneMappingPass, { title: 'Pre-transform CDL (Log)', expanded: true });
 createCDLFolder(pane, postCDLPass, { title: 'Post-transform CDL', expanded: false });
 createImageFolder(pane);
 
