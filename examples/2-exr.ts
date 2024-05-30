@@ -69,12 +69,12 @@ scene.add(content);
 
 const pane = new Pane({ title: 'Settings' });
 pane.registerPlugin(CamerakitPlugin);
+createImageFolder(pane);
 createRenderFolder(pane);
 createToneMappingFolder(pane, toneMappingPass);
 createCDLFolder(pane, prelinCDLPass, { title: 'Pre-transform CDL (Linear)', expanded: false });
 createCDLFolder(pane, toneMappingPass, { title: 'Pre-transform CDL (Log)', expanded: true });
 createCDLFolder(pane, postCDLPass, { title: 'Post-transform CDL', expanded: false });
-createImageFolder(pane);
 
 // init
 
@@ -97,16 +97,16 @@ function onResize() {
 }
 
 function createImageFolder(pane: Pane) {
-	const folder = pane.addFolder({ title: 'Image' });
+	const folder = pane.addFolder({ title: 'Input' });
 
 	const params = {
-		exr: IMAGES[0],
+		image: IMAGES[0],
 	};
 
 	const options = Object.fromEntries(IMAGES.map((path) => [path, path]));
 
-	folder.addBinding(params, 'exr', { options }).on('change', (event) => {
-		loadImage(params.exr);
+	folder.addBinding(params, 'image', { options }).on('change', (event) => {
+		loadImage(params.image);
 	});
 }
 
