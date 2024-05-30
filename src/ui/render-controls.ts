@@ -22,7 +22,7 @@ export function createRenderFolder(gui: Pane): void {
 }
 
 export function createToneMappingFolder(pane: Pane, pass: ShaderPass): void {
-	const folder = pane.addFolder({ title: 'Transform' });
+	const folder = pane.addFolder({ title: 'Tone mapping' });
 
 	const params = {
 		exposure: 0,
@@ -31,6 +31,7 @@ export function createToneMappingFolder(pane: Pane, pass: ShaderPass): void {
 
 	folder
 		.addBinding(params, 'toneMapping', {
+			label: 'transform',
 			options: {
 				AgX: THREE.AgXToneMapping,
 				'ACES Filmic': THREE.ACESFilmicToneMapping,

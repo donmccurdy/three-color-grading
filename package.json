@@ -1,13 +1,13 @@
 {
-  "name": "three-asc-cdl",
+  "name": "three-color-grading",
+  "private": true,
   "version": "0.0.1",
   "main": "src/index.ts",
   "author": "Don McCurdy <dm@donmccurdy.com>",
   "license": "BlueOak-1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+    "dev": "vite -c examples/vite.config.js"
   },
   "dependencies": {
     "@tweakpane/core": "^2.0.3",

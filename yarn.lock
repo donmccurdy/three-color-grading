@@ -1310,9 +1310,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three-asc-cdl@workspace:.":
+"three-color-grading@workspace:.":
   version: 0.0.0-use.local
-  resolution: "three-asc-cdl@workspace:."
+  resolution: "three-color-grading@workspace:."
   dependencies:
     "@tweakpane/core": "npm:^2.0.3"
     "@tweakpane/plugin-camerakit": "npm:^0.3.0"

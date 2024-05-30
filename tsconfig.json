@@ -1,9 +1,12 @@
 {
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "examples/**/*"],
 	"compilerOptions": {
+		"paths": {
+			"three-color-grading": ["./src/index.ts"]
+		},
 		"lib": ["DOM", "ESNext"],
 		"target": "ESNext",
 		"module": "ESNext",
-		"moduleResolution": "NodeNext",
+		"moduleResolution": "NodeNext"
 	}
 }
