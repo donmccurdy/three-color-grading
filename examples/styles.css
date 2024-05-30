@@ -1,0 +1,15 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	background: #202020;
+	overflow: hidden;
+}
+
+.tp-dfwv {
+	width: 320px !important;
+}
+
+.tp-lblv_v {
+	min-width: 200px !important;
+}

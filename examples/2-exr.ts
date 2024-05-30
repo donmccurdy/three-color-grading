@@ -67,7 +67,7 @@ scene.add(content);
 
 // ui
 
-const pane = new Pane();
+const pane = new Pane({ title: 'Settings' });
 pane.registerPlugin(CamerakitPlugin);
 createRenderFolder(pane);
 createToneMappingFolder(pane, toneMappingPass);
