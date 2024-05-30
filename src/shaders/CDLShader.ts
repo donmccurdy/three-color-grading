@@ -46,15 +46,10 @@ const CDLShader = {
 
 			vec3 s = color * slope;
 			vec3 o = s + offset;
-			vec3 p = pow(clamp(o, 0.0, 1.0), power);
+			vec3 p = pow(max(o, 0.0), power);
 
 			float luma = dot(p, vec3(0.2126, 0.7152, 0.0722));
-
-			return vec3(
-				clamp(luma + saturation * (p.r - luma), 0.0, 1.0),
-				clamp(luma + saturation * (p.g - luma), 0.0, 1.0),
-				clamp(luma + saturation * (p.b - luma), 0.0, 1.0)
-			);
+			return max(luma + saturation * (p - luma), 0.0);
 
 		}
 

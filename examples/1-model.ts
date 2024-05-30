@@ -21,7 +21,8 @@ const { innerWidth, innerHeight } = window;
 const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
 renderer.setPixelRatio(devicePixelRatio);
 renderer.setSize(innerWidth, innerHeight);
-renderer.toneMapping = THREE.AgXToneMapping;
+renderer.toneMapping = THREE.NoToneMapping; // pass through to ToneMappingShader.
+renderer.outputColorSpace = THREE.LinearSRGBColorSpace; // pass through to ToneMappingShader.
 document.getElementById('container')!.appendChild(renderer.domElement);
 
 // scene & lights
@@ -61,7 +62,7 @@ composer.addPass(postCDLPass);
 const loader = new GLTFLoader();
 
 loader.load(
-	'/Mixer.glb',
+	'/models/Mixer.glb',
 	({ scene: model }) => {
 		const bbox = new THREE.Box3().setFromObject(model);
 		const bboxCenter = bbox.getCenter(new THREE.Vector3());
