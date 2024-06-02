@@ -20,10 +20,10 @@ remaining:
 | Very High Contrast   | 1.57  | -0.114 | 1.0   | 0.9        |
 | High Contrast        | 1.4   | -0.08  | 1.0   | 0.95       |
 | Medium High Contrast | 1.2   | -0.04  | 1.0   | 1.0        |
-| Base Contrast        | 1.0   | -0.04  | 0.0   | 1.0        |
+| Base Contrast        | 1.0   | 0.0    | 1.0   | 1.0        |
 | Medium Low Contrast  | 0.9   | 0.02   | 1.0   | 1.05       |
-| Low Contrast         | 0.8   | 0.04   | 1.0   | 1.05       |
-| Very Low Contrast    | 0.7   | 0.06   | 1.0   | 1.1        |
+| Low Contrast         | 0.8   | 0.04   | 1.0   | 1.1        |
+| Very Low Contrast    | 0.7   | 0.06   | 1.0   | 1.15       |
 
 Conversion from OCIO::PrimaryGradingTransform contrast (log) to CDL:
 
