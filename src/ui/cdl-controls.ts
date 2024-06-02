@@ -13,17 +13,55 @@ interface GradeCDL {
 interface GradePrimary {
 	type: 'primary';
 	contrast: number;
+	contrastPivot: number;
 	saturation: number;
 }
 
+const AGX_CONTRAST_PIVOT = 0.2;
+
 const PRESETS: Record<string, GradeCDL | GradePrimary> = {
-	'Very High Contrast': { type: 'primary', contrast: 1.57, saturation: 0.9 },
-	'High Contrast': { type: 'primary', contrast: 1.4, saturation: 0.95 },
-	'Medium High Contrast': { type: 'primary', contrast: 1.2, saturation: 1 },
-	'Base Contrast': { type: 'primary', contrast: 1, saturation: 1 },
-	'Medium Low Contrast': { type: 'primary', contrast: 0.9, saturation: 1.05 },
-	'Low Contrast': { type: 'primary', contrast: 0.8, saturation: 1.1 },
-	'Very Low Contrast': { type: 'primary', contrast: 0.7, saturation: 1.15 },
+	'Very High Contrast': {
+		type: 'primary',
+		contrast: 1.57,
+		contrastPivot: AGX_CONTRAST_PIVOT,
+		saturation: 0.9,
+	},
+	'High Contrast': {
+		type: 'primary',
+		contrast: 1.4,
+		contrastPivot: AGX_CONTRAST_PIVOT,
+		saturation: 0.95,
+	},
+	'Medium High Contrast': {
+		type: 'primary',
+		contrast: 1.2,
+		contrastPivot: AGX_CONTRAST_PIVOT,
+		saturation: 1,
+	},
+	'Base Contrast': {
+		type: 'primary',
+		contrast: 1,
+		contrastPivot: AGX_CONTRAST_PIVOT,
+		saturation: 1,
+	},
+	'Medium Low Contrast': {
+		type: 'primary',
+		contrast: 0.9,
+		contrastPivot: AGX_CONTRAST_PIVOT,
+		saturation: 1.05,
+	},
+	'Low Contrast': {
+		type: 'primary',
+		contrast: 0.8,
+		contrastPivot: AGX_CONTRAST_PIVOT,
+		saturation: 1.1,
+	},
+	'Very Low Contrast': {
+		type: 'primary',
+		contrast: 0.7,
+		contrastPivot: AGX_CONTRAST_PIVOT,
+		saturation: 1.15,
+	},
 	Punchy: { type: 'cdl', slope: [1, 1, 1], power: [1.35, 1.35, 1.35], saturation: 1.4 },
 	Golden: { type: 'cdl', slope: [1.0, 0.9, 0.5], power: [0.8, 0.8, 0.8], saturation: 0.8 },
 };
@@ -147,17 +185,22 @@ export function createCDLFolder(pane: Pane, pass: ShaderPass, folderParams: Fold
 		max: 4,
 		step: 0.02,
 	};
-	folder.addBinding(params, 'contrast', { ...contrastParams }).on('change', ({ value }) => {
-		const s = value;
-		slope.setScalar(s);
-		params.slope.x = params.slope.y = params.slope.z = 0;
-		params.slope.w = params.slopeWheel = s;
+	folder
+		.addBinding(params, 'contrast', { ...contrastParams })
+		.on('change', ({ value: contrast }) => {
+			const s = contrast;
+			slope.setScalar(s);
+			params.slope.x = params.slope.y = params.slope.z = 0;
+			params.slope.w = params.slopeWheel = s;
 
-		const o = (1 - s) / 2;
-		offset.setScalar(o);
-		params.offset.x = params.offset.y = params.offset.z = 0;
-		params.offset.w = params.offsetWheel = o;
-	});
+			// Based on OCIO GradingPrimaryTransform.
+			// - https://github.com/AcademySoftwareFoundation/OpenColorIO/blob/6dc7fb40ae8822b15313638163327792c101e0c7/src/OpenColorIO/ops/gradingprimary/GradingPrimaryOpCPU.cpp#L179-L184
+			// - https://docs.google.com/spreadsheets/d/1-6lMC-oCLJjdOKLKj0sRl_hyfKRV0z-PPuHLKten2JA/edit?usp=sharing
+			const o = (1 - contrast) * AGX_CONTRAST_PIVOT;
+			offset.setScalar(o);
+			params.offset.x = params.offset.y = params.offset.z = 0;
+			params.offset.w = params.offsetWheel = o;
+		});
 
 	folder.addBlade({ view: 'separator' });
 
@@ -198,7 +241,7 @@ export function createCDLFolder(pane: Pane, pass: ShaderPass, folderParams: Fold
 			params.slope.x = params.slope.y = params.slope.z = 0;
 			params.slope.w = params.slopeWheel = s;
 
-			const o = (1 - s) / 2;
+			const o = (1 - preset.contrast) * preset.contrastPivot;
 			offset.setScalar(o);
 			params.offset.x = params.offset.y = params.offset.z = 0;
 			params.offset.w = params.offsetWheel = o;
