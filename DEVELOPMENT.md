@@ -14,16 +14,17 @@ remaining:
 
 ## Looks
 
-| name                 | slope | offset | power | saturation |
-|----------------------|-------|--------|-------|------------|
-| Punchy               | 1.0   | 0.0    | 1.35  | 1.4        |
-| Very High Contrast   | 1.57  | -0.114 | 1.0   | 0.9        |
-| High Contrast        | 1.4   | -0.08  | 1.0   | 0.95       |
-| Medium High Contrast | 1.2   | -0.04  | 1.0   | 1.0        |
-| Base Contrast        | 1.0   | 0.0    | 1.0   | 1.0        |
-| Medium Low Contrast  | 0.9   | 0.02   | 1.0   | 1.05       |
-| Low Contrast         | 0.8   | 0.04   | 1.0   | 1.1        |
-| Very Low Contrast    | 0.7   | 0.06   | 1.0   | 1.15       |
+| look                 | slope  | offset | power | saturation |
+|:---------------------|------:|--------:|------:|-----------:|
+| Punchy               | 1.00  | 0.000  | 1.35   | 1.40       |
+| |
+| Very High Contrast   | 1.57  | -0.114 | 1.00   | 0.90       |
+| High Contrast        | 1.40  | -0.080 | 1.00   | 0.95       |
+| Medium High Contrast | 1.20  | -0.040 | 1.00   | 1.00       |
+| Base Contrast        | 1.00  | 0.000  | 1.00   | 1.00       |
+| Medium Low Contrast  | 0.90  | 0.020  | 1.00   | 1.05       |
+| Low Contrast         | 0.80  | 0.040  | 1.00   | 1.10       |
+| Very Low Contrast    | 0.70  | 0.060  | 1.00   | 1.15       |
 
 Conversion from OCIO::PrimaryGradingTransform contrast (log) to CDL:
 
