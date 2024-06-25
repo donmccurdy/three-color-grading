@@ -12,8 +12,8 @@
   "dependencies": {
     "@tweakpane/core": "^2.0.3",
     "@tweakpane/plugin-camerakit": "^0.3.0",
-    "@types/three": "^0.164.0",
-    "three": "^0.164.1",
+    "@types/three": "^0.165.0",
+    "three": "^0.165.0",
     "tweakpane": "^4.0.3"
   },
   "devDependencies": {
