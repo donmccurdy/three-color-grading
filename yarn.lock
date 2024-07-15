@@ -322,9 +322,9 @@ __metadata:
   linkType: hard
 
 "@tweakpane/core@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "@tweakpane/core@npm:2.0.3"
-  checksum: 10c0/f8dcdf607afd9d0efa3d774e20f2572f65a155b96c99d9982083759c076e495ea1fec64b67f20db071dea26c88b44a5a16a1bbe4a0868ed46796fd381d2859fb
+  version: 2.0.4
+  resolution: "@tweakpane/core@npm:2.0.4"
+  checksum: 10c0/9a371612bdc67167c908815974b94eeee27adb85ebbb204473be77d35bac33776ad3d7930b3102cff71ec1b9c7fef12a25c8deb2bdfa89369a2c231150915081
   languageName: node
   linkType: hard
 
