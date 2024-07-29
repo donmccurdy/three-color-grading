@@ -358,16 +358,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/three@npm:^0.166.0":
-  version: 0.166.0
-  resolution: "@types/three@npm:0.166.0"
+"@types/three@npm:^0.167.0":
+  version: 0.167.1
+  resolution: "@types/three@npm:0.167.1"
   dependencies:
     "@tweenjs/tween.js": "npm:~23.1.2"
     "@types/stats.js": "npm:*"
     "@types/webxr": "npm:*"
     fflate: "npm:~0.8.2"
     meshoptimizer: "npm:~0.18.1"
-  checksum: 10c0/e79d3280bcd802b3bcb283455eb0d3d5790053d1921345bf27ff4258a17c5f3839870781d0e979de73398735ded85a51c4c5c1139a9e8d306d47f30d05e1c3b3
+  checksum: 10c0/26bf7ba43507a80b56ac51517db7a3eab17ec89256c293c98f4842f9816fb0226564337876bad38529ea8790901bfa6358bcae75d819b50a1cef46954ac1ada1
   languageName: node
   linkType: hard
 
@@ -1316,18 +1316,18 @@ __metadata:
   dependencies:
     "@tweakpane/core": "npm:^2.0.3"
     "@tweakpane/plugin-camerakit": "npm:^0.3.0"
-    "@types/three": "npm:^0.166.0"
-    three: "npm:^0.166.0"
+    "@types/three": "npm:^0.167.0"
+    three: "npm:^0.167.0"
     tweakpane: "npm:^4.0.3"
     typescript: "npm:^5.4.3"
     vite: "npm:^5.2.6"
   languageName: unknown
   linkType: soft
 
-"three@npm:^0.166.0":
-  version: 0.166.1
-  resolution: "three@npm:0.166.1"
-  checksum: 10c0/a0ab08ead10d249fed621dcf0d55daec192f3f029ee4c5b8626d35e0eced69d3af078b423e7e8980da6512d565ff7789eead4012a48e0cfafda4cac0906002dc
+"three@npm:^0.167.0":
+  version: 0.167.0
+  resolution: "three@npm:0.167.0"
+  checksum: 10c0/2e6f3afb1b3430444a1212e1de27f0c43f9ae095506617f1852f2159026b74ffb174ff79ad9a5a3b66d01800aee0e31b7c2d029f7e83d0e2722404a33323ec5b
   languageName: node
   linkType: hard
 
