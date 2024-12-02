@@ -1,6 +1,8 @@
 # three.js primary color grading
 
-> ⚠️ EXPERIMENTAL: Primary color grading with [ASC CDL](https://en.wikipedia.org/wiki/ASC_CDL). Not ready for use.
+> ⚠️ ARCHIVED: Future work to be continued with three.js shading language (TSL).
+
+Primary color grading with [ASC CDL](https://en.wikipedia.org/wiki/ASC_CDL).
 
 ## License
 
